@@ -1,12 +1,14 @@
+#Importa as bibliotecas que serao usadas no programa
 import cv2
 import numpy as np
 
+#Pega a imagem que sera processada
 imagem = cv2.imread('bird.jpg',0)
 
 #aplica o thresholding metodo de otsu
 ret,thresholding = cv2.threshold(imagem,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
-# Escreve o nome de cada filtro na imagem correspondente
+# Escreve o nome do filtro na imagem correspondente
 font = cv2.FONT_HERSHEY_SIMPLEX
 imagemFinal = cv2.putText(thresholding,'Limiarizacao usando metodo de otsu',(45,320), font, 1, (0,0,255), 2, cv2.LINE_AA)
 
